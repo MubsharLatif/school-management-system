@@ -21,7 +21,7 @@ header{
 
 .logo{
   
-  @include r(240)  {height:10px; width:auto; @include scale(2,2); @include transform(translateX(30px) scale(2,2) ); }
+  @include r(240)  {height:18px; width:auto; @include scale(2,2); @include transform(translateX(30px) scale(2,2) ); }
   @include r(768)  {height:25px; @include transform(translateX(50px)scale(2,2) ); }
   @include r(1024) {height:25px; @include transform(translateX(70px)scale(2,2) ); }
   @include r(1140) {height:40px; }
@@ -29,15 +29,18 @@ header{
   @include r(1500) {height:40px; width:auto; @include scale(2,2); @include transform(translateX(100px) scale(2,2) );  }
 }
 
-
-
-
 .header-list{
   margin-top:-20px;
   padding-left:50%;
+  @include r(240)  { padding-left:30%;}
+  @include r(768)  { padding-left:40%;}
+  @include r(1024) { margin-top:-20px; padding-left:60%; }
+
   li{
-    padding-left:5%;
+    
    display:inline-block;
+   @include r(240)  {padding-left: 10px;}
+   @include r(1280) {padding-left: 20px; }
    a{
     color:$white;
     font-size:15px;
@@ -55,19 +58,19 @@ header{
   }
 
 .wrapper{
-  margin: 0 auto;
-  width:100%;
-  height: 670px;
-  line-height: 1.64;
-  display: flex;
-
+  background-image: url("../images/showcase.jpg");
+  background-size: cover;
+   @include r(240)  { margin: 0 auto; width:100%; height: 450px; line-height: 1.64; display: flex; }
+   @include r(480)  { }
+   @include r(768)  { }
+   @include r(1024) { height: 670px;}
+   @include r(1140) { }
+   @include r(1280) { }
+   @include r(1500) { }
 
  
 }
 .sidebar-menu{
-  background-image: url("../images/showcase.png");
-  background-size: cover;
-	background-color: $blue-gray;
 	flex: 1;
 	order: 1;
   ul{
@@ -77,9 +80,9 @@ header{
   }
   li{
    list-style: none;
+   opacity: 0.9;
    a{
-   background-image: url(../images/bg.png);
-   background-repeat: repeat;
+   background-color: $whisper;
    font-weight: bold;
    &:hover{color : $white;}
   @include r(240)  { padding: 3% 20% 0 40%}
@@ -101,10 +104,55 @@ header{
 
 .main-link{
 	padding: 5% 0 0 2%;
-  background-color: $yellow;
+  background-color: $blue;
+  opacity : 0.8;
 	flex: 1;
 	order: 2;
+  color: $red;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .name-heading{
-  color: $red;
+  color: $white;
 }
+
+.content{
+  text-align: center;
+  margin: 10px auto auto auto;
+  h2{
+  padding: 2px auto 40px auto; }
+}
+.content-heading{color: $red;
+  border-bottom: 2px dashed $blue; 
+  border-collapse: seperate;
+  padding: 15px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+.content-about{
+  justify: center;
+  font-family: 'Michroma', sans-serif;
+  font-weight: bold;
+  width: 50%;
+  margin-left: 25%;
+  line-height: 30px;
+}
+
+footer{
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  @include r(240)  { }
+  @include r(768)  { }
+  @include r(1024) {height: 300px; }
+  @include r(1280) { }
+  @include r(1500) { }
+}
+.footer-div-one{flex: 1; background-color: $blue ; h1{color: $white; font-family: 'Montserrat Alternates', sans-serif; padding:25px;}}
+
+.footer-div-two{flex: 1; color: white; h3{color: $orange;}  font-family: 'Michroma', sans-serif; line-height: 20px; padding-top: 10px;}
+
+.footer-div-three{flex: 1; padding-top: 10px; line-height:30px; color: $orange; li{list-style:none;} h3{padding-left: 30px;} a{color: $white;}}
+
+.footer-div-four{flex: 1; padding-top: 10px; line-height:30px;  li{list-style:none;} a{color: $white;}}
+
+.footer-div-five{flex: 1;}
