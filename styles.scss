@@ -1,0 +1,110 @@
+@import "compass";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/mixins";
+@import "partials/base";
+@import "compass/css3";
+
+
+a{
+  text-decoration:none;
+}
+
+header{
+    @include r(240)  { 	width: 100%; height: 30px; background-color: $header-color; }
+  	@include r(768)  { height: 40px;}
+  	@include r(1024) { height: 40px;}
+  	@include r(1140) { height: 60px;}
+  	@include r(1280) { height: 60px;}
+    @include r(1500) { height: 60px;}
+}
+
+.logo{
+  
+  @include r(240)  {height:10px; width:auto; @include scale(2,2); @include transform(translateX(30px) scale(2,2) ); }
+  @include r(768)  {height:25px; @include transform(translateX(50px)scale(2,2) ); }
+  @include r(1024) {height:25px; @include transform(translateX(70px)scale(2,2) ); }
+  @include r(1140) {height:40px; }
+  @include r(1280) {height:40px; }
+  @include r(1500) {height:40px; width:auto; @include scale(2,2); @include transform(translateX(100px) scale(2,2) );  }
+}
+
+
+
+
+.header-list{
+  margin-top:-20px;
+  padding-left:50%;
+  li{
+    padding-left:5%;
+   display:inline-block;
+   a{
+    color:$white;
+    font-size:15px;
+    @include r(240)  { font-size:8px;}
+    @include r(768)  { font-size:11px;}
+    @include r(1024) { font-size:13px;}
+    @include r(1140) { font-size:15px;}
+    @include r(1280) { font-size:15px;}
+    @include r(1500) { font-size:15px;}
+    &:hover{
+    color: $yellow;
+    }
+    }
+   }
+  }
+
+.wrapper{
+  margin: 0 auto;
+  width:100%;
+  height: 670px;
+  line-height: 1.64;
+  display: flex;
+
+
+ 
+}
+.sidebar-menu{
+  background-image: url("../images/showcase.png");
+  background-size: cover;
+	background-color: $blue-gray;
+	flex: 1;
+	order: 1;
+  ul{
+    display: inline-block;
+    margin-left: 0px;
+    padding: 10% 0 0 0 ;
+  }
+  li{
+   list-style: none;
+   a{
+   background-image: url(../images/bg.png);
+   background-repeat: repeat;
+   font-weight: bold;
+   &:hover{color : $white;}
+  @include r(240)  { padding: 3% 20% 0 40%}
+  @include r(768)  {font-size: 20px;}
+  @include r(1024) {font-size: 25px; padding: 5% 20% 0 40%}
+  @include r(1140) { }
+  @include r(1280) { }
+  @include r(1500) { }
+   }
+  }  
+}
+
+.sidebar-menu-color-blue{color: $blue;}
+.sidebar-menu-color-red{color: $red;}
+.sidebar-menu-color-green{color: $green;}
+.sidebar-menu-color-Yellow{color: $yellow;}
+.sidebar-menu-color-skyblue{color: $blue-gray;}
+
+
+.main-link{
+	padding: 5% 0 0 2%;
+  background-color: $yellow;
+	flex: 1;
+	order: 2;
+}
+.name-heading{
+  color: $red;
+}
